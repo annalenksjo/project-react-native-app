@@ -1,17 +1,23 @@
 import React from 'react';
+import { Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { Feed } from './screens/Feed';
-import { Notifications } from './screens/Notifications';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import styled from 'styled-components/native';
+
+import { Home } from './screens/Home';
+import { Profile } from './screens/Profile';
+import { LogOut } from './screens/LogOut';
+
 
 const Drawer = createDrawerNavigator();
 
 const App = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer>      
       <Drawer.Navigator>
-        <Drawer.Screen name="Feed" component={Feed} />
-        <Drawer.Screen name="Notifications" component={Notifications} />
+        <Drawer.Screen name="🏠 Home" component={Home} />
+        <Drawer.Screen name="👤 Profile" component={Profile} />
+        <Drawer.Screen name="🗝️ Log out" component={LogOut} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
